@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity, ImageBackgr
 import { Button } from '@ui-kitten/components';
 import PhoneInput from 'react-native-phone-number-input';
 
-export default function LoginScreen({navigation}) {
+export default function RegisterScreen({navigation}) {
   const [phoneNumber, setphoneNumber] = useState('');
   const phoneInput = useRef(null);
 
@@ -14,7 +14,7 @@ export default function LoginScreen({navigation}) {
 
     <View style={styles.container}>
       <Image source={require('../assets/logo.png')} style={styles.logo} />
-      <Text style={styles.title}>Log in to InnBucks</Text>
+      <Text style={styles.title}>Sign Up For InnBucks</Text>
       <PhoneInput
         ref={phoneInput}
         defaultValue={phoneNumber}
@@ -28,10 +28,15 @@ export default function LoginScreen({navigation}) {
         setphoneNumber(text);
         }}
       />
+      <TextInput style={styles.input} placeholder="Full Name" secureTextEntry={true} />
       <TextInput style={styles.input} placeholder="Password" secureTextEntry={true} />
+      <TextInput style={styles.input} placeholder="Confirm Password" secureTextEntry={true} />
 
-      <TouchableOpacity style={styles.forgotPassword}>
-        <Text style={styles.forgotPasswordText}>Forgot your password?</Text>
+      <TouchableOpacity 
+      style={styles.forgotPassword} 
+      onPress={() => navigation.navigate('Login')}
+      >
+        <Text style={styles.forgotPasswordText}>Already Have An InnBucks Account?</Text>
       </TouchableOpacity>
 
       <TouchableOpacity>
@@ -41,16 +46,6 @@ export default function LoginScreen({navigation}) {
           Login
         </Button>
       </TouchableOpacity>
-
-      <View style={styles.signupContainer}>
-        {/* <Text style={styles.signupText}>Don't have an account?</Text> */}
-        <TouchableOpacity 
-        style={styles.signupButton}
-        onPress={() => navigation.navigate('Register')}
-        >
-          <Text style={styles.signupButtonText}>Sign Up For InnBucks</Text>
-        </TouchableOpacity>
-      </View>
 
     </View>
     </ImageBackground>
@@ -124,7 +119,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: 50,
     borderRadius: 20,
-    marginBottom: 20
+    marginBottom: 10
   },
   backgroundImage: {
     flex: 1,

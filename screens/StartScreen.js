@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
 import { Button } from '@ui-kitten/components';
 
-export default function StartScreen() {
+export default function StartScreen({navigation}) {
   return (
     <ImageBackground
       source={require('../assets/background.png')}
@@ -21,20 +21,26 @@ export default function StartScreen() {
 
         <View>
             <Text style={styles.subtitle}>
-                Welcome to Zimbabwe{'`'}s Ultimate {'\n'} Loyal {'&'} Rewards {'\n'}Programme
+                Welcome to Zimbabwe{'`'}s Ultimate {'\n'} Loyalty {'&'} Rewards {'\n'}Programme
             </Text>
         </View>
 
         <Button
           style={styles.button}
-          status='primary'>
+          status='primary'
+          onPress={() => navigation.push('Register')}
+          >
           Register
         </Button>
+
         <Button
           style={styles.button}
-          status='basic'>
+          status='basic'
+          onPress={() => navigation.push('Login')}
+          >
           Login
         </Button>
+
       </View>
 
     </ImageBackground>
