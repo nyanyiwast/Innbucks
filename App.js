@@ -6,6 +6,7 @@ import LoginScreen from './screens/LoginScreen';
 import * as eva from '@eva-design/eva';
 import { ApplicationProvider } from '@ui-kitten/components';
 import RegisterScreen from './screens/RegisterScreen';
+import HomeScreen from './screens/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +18,7 @@ export default function App() {
       <Stack.Screen name="Welcome" component={StartScreen} options={{headerShown: false}} />
       <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}} /> 
       <Stack.Screen name="Register" component={RegisterScreen} options={{headerShown: false}} />  
+      <Stack.Screen name="Home" component={HomeScreen} options={{headerShown: false}} />
     </Stack.Navigator>
   </NavigationContainer>
   </ApplicationProvider>

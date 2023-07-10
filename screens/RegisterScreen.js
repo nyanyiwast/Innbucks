@@ -41,9 +41,9 @@ export default function RegisterScreen({navigation}) {
 
       <TouchableOpacity>
       <Button
-          style={styles.loginButton}
+          style={styles.signUpButton}
           status='primary'>
-          Login
+          Sign
         </Button>
       </TouchableOpacity>
 
@@ -84,14 +84,14 @@ const styles = StyleSheet.create({
   forgotPasswordText: {
     color: '#FFFFFF',
   },
-  loginButton: {
+  signUpButton: {
     padding: 15,
     borderRadius: 20,
     width: 300,
     alignItems: 'center',
     marginBottom: 10,
   },
-  loginButtonText: {
+  signUpButtonText: {
     color: '#FFFFFF',
     fontWeight: 'bold',
   },
